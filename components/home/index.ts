@@ -1,0 +1,9 @@
+export { HeroSection } from "./HeroSection";
+export { IntroSection } from "./IntroSection";
+export { InfrastructureBannerSection } from "./InfrastructureBannerSection";
+export { TalvrinSection } from "./TalvrinSection";
+export { FocusAreasSection } from "./FocusAreasSection";
+export { ApproachSection } from "./ApproachSection";
+export { TeamBannerSection } from "./TeamBannerSection";
+export { FaqSection } from "./FaqSection";
+export { FinalCtaSection } from "./FinalCtaSection";

@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f8f3;
+  --foreground: #1f2925;
+
+  /* Zoiko Markets brand palette */
+  --brand-gold: #b4965a;
+  --brand-dark: #1f2925;
+  --brand-dark-overlay: #1f2925a8;
+  --surface-sage: #e8eee7;
+  --brand-plum: #34243d;
+  --brand-navy: #08111f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-dark-overlay: var(--brand-dark-overlay);
+  --color-surface-sage: var(--surface-sage);
+  --color-brand-plum: var(--brand-plum);
+  --color-brand-navy: var(--brand-navy);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+@keyframes scroll-indicator {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-scroll-indicator {
+  animation: scroll-indicator 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
