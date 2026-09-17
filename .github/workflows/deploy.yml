@@ -1,5 +1,9 @@
 name: Deploy Zoiko Markets Website
 
+concurrency:
+  group: deploy-zoiko-markets
+  cancel-in-progress: false
+
 on:
   push:
     branches: [main]
