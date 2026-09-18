@@ -78,7 +78,7 @@ export function MegaMenu({ config, onNavigate }: MegaMenuProps) {
             <p className="mt-2 text-sm leading-relaxed text-brand-dark/70">
               {highlight.description}
             </p>
-            <div className="relative mt-4 aspect-[252/180] w-full overflow-hidden rounded-lg">
+            <div className="relative mt-5 aspect-[252/180] w-full overflow-hidden rounded-lg">
               <Image
                 src={highlight.image}
                 alt={highlight.imageAlt}
