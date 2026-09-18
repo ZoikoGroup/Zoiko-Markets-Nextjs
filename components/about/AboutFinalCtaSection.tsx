@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Button } from "@/components/shared";
 import { AboutSection } from "./shared";
 
 export function AboutFinalCtaSection() {
@@ -9,12 +9,9 @@ export function AboutFinalCtaSection() {
       title="Interested in partnering with Zoiko Markets?"
       tone="dark"
     >
-      <Link
-        href="/contact"
-        className="inline-flex items-center border border-brand-gold px-6 py-3 text-sm font-medium text-brand-gold transition-colors hover:bg-brand-gold hover:text-brand-dark"
-      >
+      <Button href="/contact" tone="gold" variant="outline">
         Contact us
-      </Link>
+      </Button>
     </AboutSection>
   );
 }

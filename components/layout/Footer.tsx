@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { FormEvent, ReactNode } from "react";
-import { ScrollReveal } from "@/components/shared";
+import { ScrollReveal, Button } from "@/components/shared";
 import {
   footerNavGroups,
   footerOffices,
@@ -110,12 +110,9 @@ export function Footer() {
                 placeholder="Work email address"
                 className="w-full border border-white/15 bg-white/5 px-4 py-3 text-sm text-background placeholder:text-background/40 focus:border-brand-gold focus:outline-none sm:max-w-xs"
               />
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center bg-brand-gold px-6 py-3 text-sm font-medium text-brand-navy transition-colors hover:bg-brand-gold/90"
-              >
+              <Button type="submit" tone="gold" showArrow={false}>
                 Subscribe
-              </button>
+              </Button>
             </form>
             <p className="mt-4 max-w-md text-xs leading-relaxed text-background/40">
               By subscribing, you agree to receive periodic corporate updates from Zoiko Markets.
