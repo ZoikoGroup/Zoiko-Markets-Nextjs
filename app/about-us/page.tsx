@@ -1,45 +1,49 @@
 import type { Metadata } from "next";
 import {
   HeroSection,
-  MissionSection,
-  ProblemSection,
-  ScopeSection,
-  BusinessModelSection,
-  WhoWeServeSection,
-  FeatureGridSection,
-  TrustAssetSection,
-  TrustStandardSection,
-  GeographicSection,
-  InfrastructureSection,
+  InfrastructureBannerSection,
+  AtAGlanceSection,
+  WhoWeAreSection,
+  WhyWeExistSection,
+  BuildingMandateSection,
+  WhoWeBuildForSection,
+  TeamBannerSection,
+  ProblemsWeSolveSection,
+  DifferentiatorsSection,
+  ApproachSection,
+  TalvrinSection,
+  VisionMissionSection,
+  ValuesSection,
   GovernanceSection,
-  CorporateInfoSection,
-  AboutFaqSection,
-  AboutFinalCtaSection,
+  FaqSection,
+  FinalCtaSection,
 } from "@/components/about";
 
 export const metadata: Metadata = {
   title: "About Us | Zoiko Markets",
-  description: "Specialist ownership across markets, data and infrastructure.",
+  description: "Better markets need better infrastructure.",
 };
 
 export default function AboutUsPage() {
   return (
     <>
       <HeroSection />
-      <MissionSection />
-      <ProblemSection />
-      <ScopeSection />
-      <BusinessModelSection />
-      <WhoWeServeSection />
-      <FeatureGridSection />
-      <TrustAssetSection />
-      <TrustStandardSection />
-      <GeographicSection />
-      <InfrastructureSection />
+      <InfrastructureBannerSection />
+      <AtAGlanceSection />
+      <WhoWeAreSection />
+      <WhyWeExistSection />
+      <BuildingMandateSection />
+      <WhoWeBuildForSection />
+      <TeamBannerSection />
+      <ProblemsWeSolveSection />
+      <DifferentiatorsSection />
+      <ApproachSection />
+      <TalvrinSection />
+      <VisionMissionSection />
+      <ValuesSection />
       <GovernanceSection />
-      <CorporateInfoSection />
-      <AboutFaqSection />
-      <AboutFinalCtaSection />
+      <FaqSection />
+      <FinalCtaSection />
     </>
   );
 }
