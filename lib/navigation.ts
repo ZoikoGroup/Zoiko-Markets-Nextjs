@@ -10,7 +10,7 @@ export const primaryNavLinks: NavLink[] = [
   { label: "Focus Areas", href: "/our-approach#focus-areas", hasDropdown: true },
   { label: "Our Approach", href: "/our-approach", hasDropdown: true },
   { label: "Insights", href: "/insights", hasDropdown: true },
-  { label: "Governance", href: "/governance" },
+  { label: "Governance", href: "/governance", hasDropdown: true },
   { label: "Contact", href: "/contact" },
 ];
 

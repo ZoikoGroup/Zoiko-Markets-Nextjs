@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ScrollReveal } from "@/components/shared";
+import { ScrollReveal, Button } from "@/components/shared";
 
 export function HeroSection() {
   return (
@@ -20,24 +20,12 @@ export function HeroSection() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/portfolio"
-              className="group inline-flex items-center gap-2 bg-brand-dark px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-brand-dark/90"
-            >
+            <Button href="/portfolio" tone="dark" variant="solid">
               Explore our portfolio
-              <span aria-hidden className="transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-2 border border-brand-dark px-6 py-3 text-sm font-medium text-brand-dark transition-colors hover:bg-brand-dark hover:text-white"
-            >
+            </Button>
+            <Button href="/contact" tone="dark" variant="outline">
               Partner with us
-              <span aria-hidden className="transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
+            </Button>
           </div>
 
           <Link

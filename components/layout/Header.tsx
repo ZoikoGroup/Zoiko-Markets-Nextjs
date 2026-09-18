@@ -5,7 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { primaryNavLinks, partnerCta } from "@/lib/navigation";
+import { megaMenus } from "@/lib/megaMenu";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/shared";
+import { MegaMenu } from "./MegaMenu";
 
 function ChevronDownIcon() {
   return (
@@ -18,6 +21,7 @@ function ChevronDownIcon() {
 export function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
   const closeMenu = () => setIsMenuOpen(false);
 
   useEffect(() => {
@@ -41,36 +45,47 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center justify-self-center gap-6 xl:flex" aria-label="Primary">
-          {primaryNavLinks.map((link) => {
-            const isActive = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "flex items-center gap-1 text-[14.5px] font-medium tracking-wide text-brand-dark/80 transition-colors hover:text-brand-dark",
-                  isActive && "text-brand-dark"
-                )}
-              >
-                {link.label}
-                {link.hasDropdown && <ChevronDownIcon />}
-              </Link>
-            );
-          })}
-        </nav>
+        <div
+          className="relative hidden justify-self-center xl:block"
+          onMouseLeave={() => setOpenMenu(null)}
+        >
+          <nav className="flex items-center gap-6" aria-label="Primary">
+            {primaryNavLinks.map((link) => {
+              const isActive = pathname === link.href;
+              const menu = link.hasDropdown ? megaMenus[link.label] : undefined;
+
+              return (
+                <div
+                  key={link.href}
+                  className="flex h-20 items-center"
+                  onMouseEnter={() => setOpenMenu(menu ? link.label : null)}
+                >
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      "flex items-center gap-1 text-[14.5px] font-medium tracking-wide text-brand-dark/80 transition-colors hover:text-brand-dark",
+                      isActive && "text-brand-dark"
+                    )}
+                    aria-expanded={menu ? openMenu === link.label : undefined}
+                  >
+                    {link.label}
+                    {link.hasDropdown && <ChevronDownIcon />}
+                  </Link>
+                </div>
+              );
+            })}
+          </nav>
+
+          {openMenu && megaMenus[openMenu] && (
+            <MegaMenu config={megaMenus[openMenu]} onNavigate={() => setOpenMenu(null)} />
+          )}
+        </div>
 
         <div className="flex items-center gap-6 justify-self-end">
           <div className="hidden xl:block">
-            <Link
-              href={partnerCta.href}
-              className="group inline-flex items-center gap-2 rounded-[2px] bg-brand-plum px-6 py-3 text-[14.5px] font-medium text-white transition-colors hover:bg-brand-plum/90"
-            >
+            <Button href={partnerCta.href} tone="plum" roundedClassName="rounded-[2px]" className="text-[14.5px]">
               {partnerCta.label}
-              <span aria-hidden className="transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
+            </Button>
           </div>
 
           <button
@@ -119,16 +134,15 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Link
+          <Button
             href={partnerCta.href}
             onClick={closeMenu}
-            className="group mt-2 inline-flex items-center justify-center gap-2 rounded-[2px] bg-brand-plum px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-brand-plum/90"
+            tone="plum"
+            roundedClassName="rounded-[2px]"
+            className="mt-2 w-full"
           >
             {partnerCta.label}
-            <span aria-hidden className="transition-transform group-hover:translate-x-1">
-              →
-            </span>
-          </Link>
+          </Button>
         </div>
       </nav>
     </header>

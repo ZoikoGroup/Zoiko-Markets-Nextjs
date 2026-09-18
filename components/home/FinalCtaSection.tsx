@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ScrollReveal } from "@/components/shared";
+import { ScrollReveal, Button } from "@/components/shared";
 
 export function FinalCtaSection() {
   return (
@@ -19,24 +18,12 @@ export function FinalCtaSection() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-2 bg-white px-6 py-3 text-sm font-medium text-brand-plum transition-colors hover:bg-white/90"
-            >
+            <Button href="/contact" tone="white" variant="solid">
               Start a conversation
-              <span aria-hidden className="transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
-            <Link
-              href="/portfolio"
-              className="group inline-flex items-center gap-2 border border-white/40 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-brand-plum"
-            >
+            </Button>
+            <Button href="/portfolio" tone="white" variant="outline">
               Explore our portfolio
-              <span aria-hidden className="transition-transform group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
+            </Button>
           </div>
         </ScrollReveal>
 
