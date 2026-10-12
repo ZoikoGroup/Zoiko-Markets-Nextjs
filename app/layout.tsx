@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Zoiko Markets",
+  title: "Zoiko Markets | Financial Markets Technology & Intelligence",
   description: "Specialist ownership across markets, data and infrastructure.",
 };
 
